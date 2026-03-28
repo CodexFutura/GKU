@@ -1,11 +1,11 @@
 {
   "name": "codex-futura",
   "version": "0.1.0",
-  "description": "Global Knowledge Universe (GKU) — a cross-session persistent knowledge system for Claude Code that gives every conversation full context about your product, decisions, and work history.",
+  "description": "Claude Suite Shared Knowledge (CSSK) — a cross-session persistent knowledge system for Claude Code that gives every conversation full context about your product, decisions, and work history.",
   "author": "CodexFutura",
   "license": "MIT",
   "skills": [
-    "skills/gku"
+    "skills/cssk"
   ],
   "keywords": [
     "knowledge-management",

@@ -1,6 +1,6 @@
 # Codex Futura
 
-**A Global Knowledge Universe (GKU) for Claude Code** — persistent cross-session knowledge that gives every conversation full context about your product, decisions, and work history.
+**Claude Suite Shared Knowledge (CSSK)** — persistent cross-session knowledge that gives every Claude Code conversation full context about your product, decisions, and work history.
 
 ---
 
@@ -10,7 +10,7 @@ Every Claude Code session starts from zero. You repeat context. You re-explain y
 
 ## The Solution
 
-The GKU is a **persistent, file-based knowledge system** that lives in `~/.claude/gku/`. It loads automatically at the start of every session via your global `CLAUDE.md`, giving Claude instant full context — your product, your ICP, your decisions, your open threads — without you saying a word.
+The CSSK is a **persistent, file-based knowledge system** that lives in `~/.claude/cssk/`. It loads automatically at the start of every session via your global `CLAUDE.md`, giving Claude instant full context — your product, your ICP, your decisions, your open threads — without you saying a word.
 
 ---
 
@@ -19,9 +19,9 @@ The GKU is a **persistent, file-based knowledge system** that lives in `~/.claud
 ```
 ~/.claude/
 ├── CLAUDE.md          ← Instructs Claude to read INDEX.md every session
-├── skills/gku/
-│   └── SKILL.md       ← GKU skill (auto-triggers on relevant queries)
-└── gku/
+├── skills/cssk/
+│   └── SKILL.md       ← CSSK skill (auto-triggers on relevant queries)
+└── cssk/
     ├── INDEX.md        ← Master index (always-on, < 200 lines)
     └── domains/
         ├── product.md          ← Your product context
@@ -41,46 +41,46 @@ The GKU is a **persistent, file-based knowledge system** that lives in `~/.claud
 ### 1. Clone this repo
 
 ```bash
-git clone https://github.com/CodexFutura/GKU.git
-cd GKU
+git clone https://github.com/CodexFutura/CSSK.git
+cd CSSK
 ```
 
-### 2. Install the GKU skill
+### 2. Install the CSSK skill
 
 ```bash
-mkdir -p ~/.claude/skills/gku
-cp skills/gku/SKILL.md ~/.claude/skills/gku/SKILL.md
+mkdir -p ~/.claude/skills/cssk
+cp skills/cssk/SKILL.md ~/.claude/skills/cssk/SKILL.md
 ```
 
-### 3. Create your GKU directory
+### 3. Create your CSSK directory
 
 ```bash
-mkdir -p ~/.claude/gku/domains
-cp skills/gku/references/index-template.md ~/.claude/gku/INDEX.md
+mkdir -p ~/.claude/cssk/domains
+cp skills/cssk/references/index-template.md ~/.claude/cssk/INDEX.md
 ```
 
-### 4. Add the GKU reference to your global CLAUDE.md
+### 4. Add the CSSK reference to your global CLAUDE.md
 
 Add this block to `~/.claude/CLAUDE.md`:
 
 ```markdown
-## Global Knowledge Universe (GKU)
+## Claude Suite Shared Knowledge (CSSK)
 
-At the start of every session, read `~/.claude/gku/INDEX.md` to load the always-on knowledge index.
+At the start of every session, read `~/.claude/cssk/INDEX.md` to load the always-on knowledge index.
 
-Use the `gku` skill to search, add, or update knowledge mid-session.
+Use the `cssk` skill to search, add, or update knowledge mid-session.
 
-Domain files live at `~/.claude/gku/domains/` — read on demand when a topic is relevant.
+Domain files live at `~/.claude/cssk/domains/` — read on demand when a topic is relevant.
 ```
 
 ### 5. Fill in your INDEX.md
 
-Edit `~/.claude/gku/INDEX.md` with your product context, key facts, and initial domain file table.
+Edit `~/.claude/cssk/INDEX.md` with your product context, key facts, and initial domain file table.
 
 ### 6. Create your first domain file
 
 ```bash
-cp skills/gku/references/domain-template.md ~/.claude/gku/domains/my-product.md
+cp skills/cssk/references/domain-template.md ~/.claude/cssk/domains/my-product.md
 # Edit it with your product facts
 ```
 
@@ -94,17 +94,17 @@ cp skills/gku/references/domain-template.md ~/.claude/gku/domains/my-product.md
 Claude reads INDEX.md every session — no commands needed.
 
 ### Load a specific domain
-> "Read the GKU customer-flows domain"
+> "Read the CSSK customer-flows domain"
 
 ### Add new knowledge
-> "Add this decision to the GKU"
-> "Update the GKU with what we just built"
+> "Add this decision to the CSSK"
+> "Update the CSSK with what we just built"
 
 ### Search session history
 > "What did we decide about X in a previous session?"
 
 ### Update after a session
-> "Update the GKU session log with today's decisions"
+> "Update the CSSK session log with today's decisions"
 
 ---
 
@@ -112,11 +112,11 @@ Claude reads INDEX.md every session — no commands needed.
 
 | File | Purpose |
 |---|---|
-| `skills/gku/SKILL.md` | The Claude Code skill definition — install to `~/.claude/skills/gku/` |
-| `skills/gku/references/index-template.md` | Starter INDEX.md to copy and adapt |
-| `skills/gku/references/domain-template.md` | Starter domain file template |
-| `skills/gku/references/session-log-template.md` | Session log entry template |
-| `skills/gku/references/worked-example.md` | Complete worked example with real GKU structure |
+| `skills/cssk/SKILL.md` | The Claude Code skill definition — install to `~/.claude/skills/cssk/` |
+| `skills/cssk/references/index-template.md` | Starter INDEX.md to copy and adapt |
+| `skills/cssk/references/domain-template.md` | Starter domain file template |
+| `skills/cssk/references/session-log-template.md` | Session log entry template |
+| `skills/cssk/references/worked-example.md` | Complete worked example with real CSSK structure |
 
 ---
 
@@ -136,9 +136,9 @@ Claude reads INDEX.md every session — no commands needed.
 
 ## Theoretical Foundation
 
-The GKU is grounded in **systemic good practices** — specifically the principle that organizational intelligence should be embedded in structure, not in individual memory. When knowledge lives only in people's heads (or in a single conversation), it is lost when that person (or session) ends.
+The CSSK is grounded in **systemic good practices** — specifically the principle that organizational intelligence should be embedded in structure, not in individual memory. When knowledge lives only in people's heads (or in a single conversation), it is lost when that person (or session) ends.
 
-The GKU creates a **reinforcing feedback loop**: more sessions → more knowledge captured → more context in future sessions → better work → more sessions worth capturing.
+The CSSK creates a **reinforcing feedback loop**: more sessions → more knowledge captured → more context in future sessions → better work → more sessions worth capturing.
 
 The opposing **balancing loop** is maintenance friction. The design keeps updates minimal: one session log entry, one domain file update, never a full rewrite.
 
@@ -146,10 +146,10 @@ The opposing **balancing loop** is maintenance friction. The design keeps update
 
 ## Worked Example
 
-See `skills/gku/references/worked-example.md` for a complete real-world GKU implementation built for a B2B SaaS product, including:
+See `skills/cssk/references/worked-example.md` for a complete real-world CSSK implementation built for a B2B SaaS product, including:
 - A full INDEX.md with product context, proprietary assessment framework, and session log
 - Example domain file structure for capability dimensions, customer flows, and content strategy
-- Lessons learned about what makes a GKU effective
+- Lessons learned about what makes a CSSK effective
 
 ---
 

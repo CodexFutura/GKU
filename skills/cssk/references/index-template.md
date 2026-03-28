@@ -1,4 +1,4 @@
-# GKU — Global Knowledge Universe
+# CSSK — Claude Suite Shared Knowledge
 **Owner:** [your name] | **Updated:** YYYY-MM-DD | **Sessions logged:** 0
 
 > This file is loaded by every Claude Code session via CLAUDE.md. It provides the always-on knowledge index. Read domain files when deeper context is needed.
@@ -15,7 +15,7 @@
 
 ## [Your Product / Project Name]
 
-**Domain:** `~/.claude/gku/domains/product.md`
+**Domain:** `~/.claude/cssk/domains/product.md`
 
 [2–3 sentence summary of what you're building and for whom]
 
@@ -33,7 +33,7 @@ Key facts always useful in context:
 
 ---
 
-## GKU Domain Files
+## CSSK Domain Files
 
 | File | Topic | Last Updated |
 |---|---|---|
@@ -41,7 +41,7 @@ Key facts always useful in context:
 
 ---
 
-## GKU Maintenance Rules
+## CSSK Maintenance Rules
 
 1. Every session: Add a row to Session Log with date, topic, key output
 2. Every major decision: Update the relevant domain file

@@ -1,4 +1,4 @@
-# GKU Domain: [Topic Name]
+# CSSK Domain: [Topic Name]
 **Last updated:** YYYY-MM-DD | **Source:** [Where this knowledge came from]
 
 ---
