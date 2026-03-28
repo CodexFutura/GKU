@@ -2,7 +2,7 @@
   "name": "codex-futura",
   "version": "0.1.0",
   "description": "Global Knowledge Universe (GKU) — a cross-session persistent knowledge system for Claude Code that gives every conversation full context about your product, decisions, and work history.",
-  "author": "horatonsan",
+  "author": "CodexFutura",
   "license": "MIT",
   "skills": [
     "skills/gku"
@@ -11,7 +11,7 @@
     "knowledge-management",
     "cross-session",
     "persistent-memory",
-    "systems-thinking",
+    "systemic-good-practices",
     "claude-code"
   ]
 }

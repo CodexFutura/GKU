@@ -41,8 +41,8 @@ The GKU is a **persistent, file-based knowledge system** that lives in `~/.claud
 ### 1. Clone this repo
 
 ```bash
-git clone https://github.com/horatonsan/codex-futura.git
-cd codex-futura
+git clone https://github.com/CodexFutura/GKU.git
+cd GKU
 ```
 
 ### 2. Install the GKU skill
@@ -136,7 +136,7 @@ Claude reads INDEX.md every session — no commands needed.
 
 ## Theoretical Foundation
 
-The GKU is grounded in **Systems Thinking** — specifically the principle that organizational intelligence should be embedded in structure, not in individual memory. When knowledge lives only in people's heads (or in a single conversation), it is lost when that person (or session) ends.
+The GKU is grounded in **systemic good practices** — specifically the principle that organizational intelligence should be embedded in structure, not in individual memory. When knowledge lives only in people's heads (or in a single conversation), it is lost when that person (or session) ends.
 
 The GKU creates a **reinforcing feedback loop**: more sessions → more knowledge captured → more context in future sessions → better work → more sessions worth capturing.
 
@@ -146,9 +146,9 @@ The opposing **balancing loop** is maintenance friction. The design keeps update
 
 ## Worked Example
 
-See `skills/gku/references/worked-example.md` for a complete real-world GKU implementation built for a B2B SaaS product (Systems Thinking OS), including:
-- A full INDEX.md with product context, SII assessment framework, and session log
-- Example domain file structure for SII dimensions, customer flows, and content strategy
+See `skills/gku/references/worked-example.md` for a complete real-world GKU implementation built for a B2B SaaS product, including:
+- A full INDEX.md with product context, proprietary assessment framework, and session log
+- Example domain file structure for capability dimensions, customer flows, and content strategy
 - Lessons learned about what makes a GKU effective
 
 ---
@@ -170,4 +170,4 @@ MIT — use freely, adapt to your context, contribute back.
 
 ## Author
 
-Built by [horatonsan](https://github.com/horatonsan) using Claude Code and Systems Thinking principles.
+Built by [CodexFutura](https://github.com/CodexFutura) using Claude Code and systemic good practices.

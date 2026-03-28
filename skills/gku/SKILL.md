@@ -142,4 +142,4 @@ Each domain file follows this pattern:
 | `references/index-template.md` | Starter INDEX.md you can copy and adapt |
 | `references/domain-template.md` | Starter domain file template |
 | `references/session-log-template.md` | Session log entry template |
-| `references/worked-example.md` | Complete worked example (Systems Thinking OS product) |
+| `references/worked-example.md` | Complete worked example with real GKU structure |
