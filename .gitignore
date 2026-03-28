@@ -1,0 +1,7 @@
+# OS
+.DS_Store
+Thumbs.db
+
+# Personal GKU data (never commit your actual ~/.claude/gku — it contains private context)
+# Only the templates and skill files in skills/gku/ belong in this repo
+*.local.md
