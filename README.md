@@ -1,6 +1,6 @@
-# Codex Futura
+# Shared Knowledge Suite (SKS)
 
-**Shared Knowledge Suite (SKS)** — persistent cross-session knowledge that gives every Claude Code conversation full context about your product, decisions, and work history.
+Persistent cross-session knowledge that gives every Claude Code conversation full context about your product, decisions, and work history.
 
 ---
 
