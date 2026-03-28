@@ -1,6 +1,6 @@
 # Session Log Entry Template
 
-Copy this block into `~/.claude/cssk/domains/session-log.md` at the end of each significant session.
+Copy this block into `~/.claude/sks/domains/session-log.md` at the end of each significant session.
 
 ---
 
@@ -24,14 +24,14 @@ Copy this block into `~/.claude/cssk/domains/session-log.md` at the end of each 
 **Files created/updated this session:**
 - `[file path]` — [what was added]
 
-**CSSK domains updated:**
+**SKS domains updated:**
 - `domains/[topic].md` — [what was added]
 
 ---
 
 ## How to Update INDEX.md After a Session
 
-In `~/.claude/cssk/INDEX.md`:
+In `~/.claude/sks/INDEX.md`:
 
 1. Add a row to the Session Log table:
 ```
@@ -43,4 +43,4 @@ In `~/.claude/cssk/INDEX.md`:
 **Sessions logged:** N
 ```
 
-3. Update any "Last Updated" dates in the CSSK Domain Files table for domains you touched.
+3. Update any "Last Updated" dates in the SKS Domain Files table for domains you touched.

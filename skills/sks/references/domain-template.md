@@ -1,4 +1,4 @@
-# CSSK Domain: [Topic Name]
+# SKS Domain: [Topic Name]
 **Last updated:** YYYY-MM-DD | **Source:** [Where this knowledge came from]
 
 ---

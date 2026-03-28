@@ -1,6 +1,6 @@
 # Codex Futura
 
-**Claude Suite Shared Knowledge (CSSK)** — persistent cross-session knowledge that gives every Claude Code conversation full context about your product, decisions, and work history.
+**Shared Knowledge Suite (SKS)** — persistent cross-session knowledge that gives every Claude Code conversation full context about your product, decisions, and work history.
 
 ---
 
@@ -10,7 +10,7 @@ Every Claude Code session starts from zero. You repeat context. You re-explain y
 
 ## The Solution
 
-The CSSK is a **persistent, file-based knowledge system** that lives in `~/.claude/cssk/`. It loads automatically at the start of every session via your global `CLAUDE.md`, giving Claude instant full context — your product, your ICP, your decisions, your open threads — without you saying a word.
+The SKS is a **persistent, file-based knowledge system** that lives in `~/.claude/sks/`. It loads automatically at the start of every session via your global `CLAUDE.md`, giving Claude instant full context — your product, your ICP, your decisions, your open threads — without you saying a word.
 
 ---
 
@@ -19,9 +19,9 @@ The CSSK is a **persistent, file-based knowledge system** that lives in `~/.clau
 ```
 ~/.claude/
 ├── CLAUDE.md          ← Instructs Claude to read INDEX.md every session
-├── skills/cssk/
-│   └── SKILL.md       ← CSSK skill (auto-triggers on relevant queries)
-└── cssk/
+├── skills/sks/
+│   └── SKILL.md       ← SKS skill (auto-triggers on relevant queries)
+└── sks/
     ├── INDEX.md        ← Master index (always-on, < 200 lines)
     └── domains/
         ├── product.md          ← Your product context
@@ -41,46 +41,46 @@ The CSSK is a **persistent, file-based knowledge system** that lives in `~/.clau
 ### 1. Clone this repo
 
 ```bash
-git clone https://github.com/CodexFutura/CSSK.git
-cd CSSK
+git clone https://github.com/CodexFutura/SKS.git
+cd SKS
 ```
 
-### 2. Install the CSSK skill
+### 2. Install the SKS skill
 
 ```bash
-mkdir -p ~/.claude/skills/cssk
-cp skills/cssk/SKILL.md ~/.claude/skills/cssk/SKILL.md
+mkdir -p ~/.claude/skills/sks
+cp skills/sks/SKILL.md ~/.claude/skills/sks/SKILL.md
 ```
 
-### 3. Create your CSSK directory
+### 3. Create your SKS directory
 
 ```bash
-mkdir -p ~/.claude/cssk/domains
-cp skills/cssk/references/index-template.md ~/.claude/cssk/INDEX.md
+mkdir -p ~/.claude/sks/domains
+cp skills/sks/references/index-template.md ~/.claude/sks/INDEX.md
 ```
 
-### 4. Add the CSSK reference to your global CLAUDE.md
+### 4. Add the SKS reference to your global CLAUDE.md
 
 Add this block to `~/.claude/CLAUDE.md`:
 
 ```markdown
-## Claude Suite Shared Knowledge (CSSK)
+## Shared Knowledge Suite (SKS)
 
-At the start of every session, read `~/.claude/cssk/INDEX.md` to load the always-on knowledge index.
+At the start of every session, read `~/.claude/sks/INDEX.md` to load the always-on knowledge index.
 
-Use the `cssk` skill to search, add, or update knowledge mid-session.
+Use the `sks` skill to search, add, or update knowledge mid-session.
 
-Domain files live at `~/.claude/cssk/domains/` — read on demand when a topic is relevant.
+Domain files live at `~/.claude/sks/domains/` — read on demand when a topic is relevant.
 ```
 
 ### 5. Fill in your INDEX.md
 
-Edit `~/.claude/cssk/INDEX.md` with your product context, key facts, and initial domain file table.
+Edit `~/.claude/sks/INDEX.md` with your product context, key facts, and initial domain file table.
 
 ### 6. Create your first domain file
 
 ```bash
-cp skills/cssk/references/domain-template.md ~/.claude/cssk/domains/my-product.md
+cp skills/sks/references/domain-template.md ~/.claude/sks/domains/my-product.md
 # Edit it with your product facts
 ```
 
@@ -94,17 +94,17 @@ cp skills/cssk/references/domain-template.md ~/.claude/cssk/domains/my-product.m
 Claude reads INDEX.md every session — no commands needed.
 
 ### Load a specific domain
-> "Read the CSSK customer-flows domain"
+> "Read the SKS customer-flows domain"
 
 ### Add new knowledge
-> "Add this decision to the CSSK"
-> "Update the CSSK with what we just built"
+> "Add this decision to the SKS"
+> "Update the SKS with what we just built"
 
 ### Search session history
 > "What did we decide about X in a previous session?"
 
 ### Update after a session
-> "Update the CSSK session log with today's decisions"
+> "Update the SKS session log with today's decisions"
 
 ---
 
@@ -112,11 +112,11 @@ Claude reads INDEX.md every session — no commands needed.
 
 | File | Purpose |
 |---|---|
-| `skills/cssk/SKILL.md` | The Claude Code skill definition — install to `~/.claude/skills/cssk/` |
-| `skills/cssk/references/index-template.md` | Starter INDEX.md to copy and adapt |
-| `skills/cssk/references/domain-template.md` | Starter domain file template |
-| `skills/cssk/references/session-log-template.md` | Session log entry template |
-| `skills/cssk/references/worked-example.md` | Complete worked example with real CSSK structure |
+| `skills/sks/SKILL.md` | The Claude Code skill definition — install to `~/.claude/skills/sks/` |
+| `skills/sks/references/index-template.md` | Starter INDEX.md to copy and adapt |
+| `skills/sks/references/domain-template.md` | Starter domain file template |
+| `skills/sks/references/session-log-template.md` | Session log entry template |
+| `skills/sks/references/worked-example.md` | Complete worked example with real SKS structure |
 
 ---
 
@@ -136,9 +136,9 @@ Claude reads INDEX.md every session — no commands needed.
 
 ## Theoretical Foundation
 
-The CSSK is grounded in **systemic good practices** — specifically the principle that organizational intelligence should be embedded in structure, not in individual memory. When knowledge lives only in people's heads (or in a single conversation), it is lost when that person (or session) ends.
+The SKS is grounded in **systemic good practices** — specifically the principle that organizational intelligence should be embedded in structure, not in individual memory. When knowledge lives only in people's heads (or in a single conversation), it is lost when that person (or session) ends.
 
-The CSSK creates a **reinforcing feedback loop**: more sessions → more knowledge captured → more context in future sessions → better work → more sessions worth capturing.
+The SKS creates a **reinforcing feedback loop**: more sessions → more knowledge captured → more context in future sessions → better work → more sessions worth capturing.
 
 The opposing **balancing loop** is maintenance friction. The design keeps updates minimal: one session log entry, one domain file update, never a full rewrite.
 
@@ -146,10 +146,10 @@ The opposing **balancing loop** is maintenance friction. The design keeps update
 
 ## Worked Example
 
-See `skills/cssk/references/worked-example.md` for a complete real-world CSSK implementation built for a B2B SaaS product, including:
+See `skills/sks/references/worked-example.md` for a complete real-world SKS implementation built for a B2B SaaS product, including:
 - A full INDEX.md with product context, proprietary assessment framework, and session log
 - Example domain file structure for capability dimensions, customer flows, and content strategy
-- Lessons learned about what makes a CSSK effective
+- Lessons learned about what makes an SKS effective
 
 ---
 

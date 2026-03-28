@@ -1,6 +1,6 @@
-# CSSK Worked Example — B2B SaaS Product
+# SKS Worked Example — B2B SaaS Product
 
-This file shows a complete, real-world CSSK implementation for a B2B SaaS product.
+This file shows a complete, real-world SKS implementation for a B2B SaaS product.
 Use it as a reference for structuring your own INDEX.md and domain files.
 
 ---
@@ -8,7 +8,7 @@ Use it as a reference for structuring your own INDEX.md and domain files.
 ## Example INDEX.md
 
 ```markdown
-# CSSK — Claude Suite Shared Knowledge
+# SKS — Shared Knowledge Suite
 **Owner:** founder | **Updated:** 2026-03-28 | **Sessions logged:** 1
 
 ## Who This User Is
@@ -30,9 +30,9 @@ Risk flag: any dimension < 40. Certification: composite ≥ 75, no flags, 6 mont
 ## Session Log
 | Date | Session | Key Output |
 |---|---|---|
-| 2026-03-28 | Session 1 | Champion flows (4 verticals), onboarding (4 ICPs), 52-week SEO roadmap, CSSK |
+| 2026-03-28 | Session 1 | Champion flows (4 verticals), onboarding (4 ICPs), 52-week SEO roadmap, SKS |
 
-## CSSK Domain Files
+## SKS Domain Files
 | File | Topic | Last Updated |
 |---|---|---|
 | `domains/assessment-framework.md` | 7-dimension framework, rubrics, scoring, calibration | 2026-03-28 |
@@ -48,7 +48,7 @@ Risk flag: any dimension < 40. Certification: composite ≥ 75, no flags, 6 mont
 ## Example Domain: assessment-framework.md (excerpt)
 
 ```markdown
-# CSSK Domain: Assessment Framework
+# SKS Domain: Assessment Framework
 **Last updated:** 2026-03-28
 
 ## The 7 Dimensions
@@ -76,7 +76,7 @@ Score = (0.20×D1) + (0.20×D2) + (0.15×D3) + (0.15×D4) + (0.15×D5) + (0.10×
 
 ---
 
-## What Made This CSSK Effective
+## What Made This SKS Effective
 
 1. **INDEX.md is concise** — fits in context without overwhelming; just enough to orient
 2. **Domain files are deep** — full rubrics, scoring rules, all flows — read only when needed

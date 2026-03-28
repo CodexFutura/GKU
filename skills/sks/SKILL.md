@@ -1,21 +1,21 @@
 ---
-name: cssk
-description: Claude Suite Shared Knowledge — Use this skill when the user references their product, prior session work, key decisions, knowledge domains, or asks "what do we know about", "what did we decide", "remind me", "from our previous sessions", "update the CSSK", or "add this to the knowledge base". This skill provides cross-session continuity by loading the right domain files and maintaining a persistent knowledge base that survives across all Claude Code sessions on the same machine.
+name: sks
+description: Shared Knowledge Suite — Use this skill when the user references their product, prior session work, key decisions, knowledge domains, or asks "what do we know about", "what did we decide", "remind me", "from our previous sessions", "update the SKS", or "add this to the knowledge base". This skill provides cross-session continuity by loading the right domain files and maintaining a persistent knowledge base that survives across all Claude Code sessions on the same machine.
 version: 0.1.0
 ---
 
-# CSSK — Claude Suite Shared Knowledge
+# SKS — Shared Knowledge Suite
 
-The CSSK is a **persistent, file-based knowledge system** that makes every Claude Code session aware of everything you have ever built, decided, or discovered — across all conversations on this machine.
+The SKS is a **persistent, file-based knowledge system** that makes every Claude Code session aware of everything you have ever built, decided, or discovered — across all conversations on this machine.
 
 ## The Problem It Solves
 
-Every Claude Code session starts from zero. Without the CSSK, you repeat context every session. With the CSSK, the INDEX.md loads automatically via CLAUDE.md and gives Claude full project awareness from message one.
+Every Claude Code session starts from zero. Without the SKS, you repeat context every session. With the SKS, the INDEX.md loads automatically via CLAUDE.md and gives Claude full project awareness from message one.
 
 ## Architecture
 
 ```
-~/.claude/cssk/
+~/.claude/sks/
 ├── INDEX.md              ← Master index (always-on, loaded in every session)
 └── domains/
     ├── <topic-1>.md      ← Deep knowledge, read on demand
@@ -25,10 +25,10 @@ Every Claude Code session starts from zero. Without the CSSK, you repeat context
 
 ## Setup Instructions
 
-### 1. Create the CSSK directory
+### 1. Create the SKS directory
 
 ```bash
-mkdir -p ~/.claude/cssk/domains
+mkdir -p ~/.claude/sks/domains
 ```
 
 ### 2. Create your INDEX.md
@@ -36,14 +36,14 @@ mkdir -p ~/.claude/cssk/domains
 Copy the template from `references/index-template.md` and fill in your context:
 
 ```bash
-cp references/index-template.md ~/.claude/cssk/INDEX.md
+cp references/index-template.md ~/.claude/sks/INDEX.md
 ```
 
 ### 3. Add the SKILL.md to your global skills
 
 ```bash
-mkdir -p ~/.claude/skills/cssk
-cp skills/cssk/SKILL.md ~/.claude/skills/cssk/SKILL.md
+mkdir -p ~/.claude/skills/sks
+cp skills/sks/SKILL.md ~/.claude/skills/sks/SKILL.md
 ```
 
 ### 4. Update your global CLAUDE.md
@@ -51,13 +51,13 @@ cp skills/cssk/SKILL.md ~/.claude/skills/cssk/SKILL.md
 Add this block to `~/.claude/CLAUDE.md`:
 
 ```markdown
-## Claude Suite Shared Knowledge (CSSK)
+## Shared Knowledge Suite (SKS)
 
-At the start of every session, read `~/.claude/cssk/INDEX.md` to load the always-on knowledge index.
+At the start of every session, read `~/.claude/sks/INDEX.md` to load the always-on knowledge index.
 
-Use the `cssk` skill to search, add, or update knowledge mid-session.
+Use the `sks` skill to search, add, or update knowledge mid-session.
 
-Domain files live at `~/.claude/cssk/domains/` — read on demand when a topic is relevant.
+Domain files live at `~/.claude/sks/domains/` — read on demand when a topic is relevant.
 ```
 
 ### 5. Create your first domain files
@@ -65,16 +65,16 @@ Domain files live at `~/.claude/cssk/domains/` — read on demand when a topic i
 Copy and adapt the templates from `references/domain-template.md`:
 
 ```bash
-cp references/domain-template.md ~/.claude/cssk/domains/my-product.md
+cp references/domain-template.md ~/.claude/sks/domains/my-product.md
 ```
 
 ## How to Use Mid-Session
 
 ### Load context
-Claude reads `INDEX.md` automatically. For deeper context, say: **"Read the CSSK customer-flows domain"**
+Claude reads `INDEX.md` automatically. For deeper context, say: **"Read the SKS customer-flows domain"**
 
 ### Add new knowledge
-Say: **"Add this to the CSSK"** or **"Update the CSSK with what we just decided"**
+Say: **"Add this to the SKS"** or **"Update the SKS with what we just decided"**
 
 Claude will:
 1. Read the relevant domain file
@@ -86,7 +86,7 @@ Say: **"What did we decide about X in a previous session?"**
 
 Claude reads `session-log.md` and the relevant domain file.
 
-## CSSK Maintenance Rules
+## SKS Maintenance Rules
 
 1. **Read before writing** — always read the domain file before updating
 2. **Latest date wins** — newer entries override older ones on conflicts
@@ -100,7 +100,7 @@ Claude reads `session-log.md` and the relevant domain file.
 Each domain file follows this pattern:
 
 ```markdown
-# CSSK Domain: <Topic Name>
+# SKS Domain: <Topic Name>
 **Last updated:** YYYY-MM-DD
 
 ---
@@ -115,7 +115,7 @@ Each domain file follows this pattern:
 ## Index File Structure
 
 ```markdown
-# CSSK — Claude Suite Shared Knowledge
+# SKS — Shared Knowledge Suite
 **Owner:** <name> | **Updated:** YYYY-MM-DD | **Sessions logged:** N
 
 ## Who This User Is
@@ -129,7 +129,7 @@ Each domain file follows this pattern:
 |---|---|---|
 | YYYY-MM-DD | Session 1 | [What was built/decided] |
 
-## CSSK Domain Files
+## SKS Domain Files
 | File | Topic | Last Updated |
 |---|---|---|
 | `domains/<file>.md` | [Topic] | YYYY-MM-DD |
@@ -142,4 +142,4 @@ Each domain file follows this pattern:
 | `references/index-template.md` | Starter INDEX.md you can copy and adapt |
 | `references/domain-template.md` | Starter domain file template |
 | `references/session-log-template.md` | Session log entry template |
-| `references/worked-example.md` | Complete worked example with real CSSK structure |
+| `references/worked-example.md` | Complete worked example with real SKS structure |
